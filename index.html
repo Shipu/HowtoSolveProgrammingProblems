@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>How to Solve Programming Problems - Wab Day to Save Miraz</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section>
+			<h2>Wab Day to Save Miraz</h2>
+			<h4>How to Solve Programming Problems</h4>
+			<p>
+				<small>Created by <a href="http://shipuahamed.com" target="_blank">Shipu Ahamed</a></small>
+			</p>
+		</section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h3>Common mistakes</h3>
+            </section>
+            <section>
+                <scetion>
+                    <h4>Someone try to solve a programming problem is they try to start writing code as soon as possible.</h4>
+                </scetion>
+                <scetion class="fragment fade-up">
+                    <h5>You really want to make sure you take enough time to understand the problem completely before attempting to solve it.</h5>
+                </scetion>
+            </section>
+            <section>
+                <h4>Another big mistake is trying to over solve the solution on the first iteration.  Keep it simple, don’t try to get fancy.</h4>
+            </section>
+        </section>
+
+        <section data-transition="slide" data-background="#dedede" data-background-transition="zoom">
+            <!--<h2>Background Transitions</h2>-->
+            <img  width="850" data-src="img/mirpur-dohs-route.png" alt="Route">
+            <!--<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>-->
+        </section>
+
+        <section>
+            <section>
+                <h3>Read the problem completely twice</h3>
+            </section>
+            <section>
+                A good test of this is whether or not you can explain the problem to someone else.
+            </section>
+            <section>
+                If you don’t understand the problem properly, you can not solve it.
+            </section>
+            <section>
+                Do not worry about wasting time here, because the better you understand the problem, the easier it will be to solve it.
+            </section>
+        </section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h2>Solve the problem manually</h2>
+            </section>
+            <section>
+                <h4>“Nothing can be automated that can not be done manually!”</h4>
+            </section>
+            <section>
+                If I give you a string “Bangladesh”, and ask you to reverse it
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment fade-up">Write “Bangladesh” down.</li>
+                    <li class="fragment fade-in">Start a new word, and put “h” as the first letter.  (Why –> because it is the last letter, we want to start here)</li>
+                    <li class="fragment fade-in">Put “s” down as the 2nd letter.  (Why –> because it is the next letter backwards from the last letter we copied)</li>
+                    <li class="fragment fade-in">Put “e” down as the 3rd letter.  (Why –> same as above)</li>
+                    <li class="fragment fade-in">Etc</li>
+                </ul>
+            </section>
+        </section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h2>Optimize the manual solution</h2>
+            </section>
+            <section>
+                <ol>
+                    <li class="fragment fade-up">Write “Bangladesh” down.</li>
+                    <li class="fragment fade-in">Start at the last letter in the word and create a new empty word.</li>
+                    <li class="fragment fade-in">Append the current letter to the new word</li>
+                    <li class="fragment fade-in">If there is a previous letter in old word, make the previous letter the current letter and start back at 3.</li>
+                </ol>
+            </section>
+        </section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h3>Write pseudo-code or comments</h3>
+            </section>
+            <section>
+                <pre><code class="php" data-trim contenteditable>
+// NewWord = “”
+
+// Loop backwards through word to reverse
+
+//   NewWord += CurrentLetter
+
+// Return NewWord
+                </code></pre>
+            </section>
+        </section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h3>Replace comments with real code</h3>
+            </section>
+            <section>
+                <pre style="font-size: 25px;"><code class="C#" data-trim contenteditable>
+String newWord = "";
+for(int index = oldWord.Length – 1; index >= 0; index—)
+   newWord = newWord + oldWord[index];
+return newWord;
+                </code></pre>
+            </section>
+            <section>
+                <pre style="font-size: 25px;"><code class="php" data-trim contenteditable>
+$newWord = "";
+for($index = strlen($oldWord) – 1; $index >= 0; $index—)
+   $newWord = $newWord.$oldWord[$index];
+return newWord;
+                </code></pre>
+            </section>
+        </section>
+
+        <section data-background-transition="zoom">
+            <section>
+                <h3>Optimize the real code</h3>
+            </section>
+            <section>
+                <pre style="font-size: 40px;"><code class="C#" data-trim contenteditable>
+echo strrev($oldWord);
+                </code></pre>
+            </section>
+        </section>
+        <section data-transition="slide" data-background="#D5EBFF" data-background-transition="zoom">
+            <section>
+                <h2>How to Solve Problems</h2>
+                <ol>
+                    <li class="fragment fade-up">Read the problem completely twice</li>
+                    <li class="fragment fade-in">Solve the problem manually</li>
+                    <li class="fragment fade-in">Optimize the manual solution</li>
+                    <li class="fragment fade-in">Write pseudo-code or comments</li>
+                    <li class="fragment fade-in">Replace comments with real code</li>
+                    <li class="fragment fade-in">Optimize the real code</li>
+                </ol>
+            </section>
+        </section>
+        <section data-transition="slide" data-background="#39424E" data-background-transition="zoom">
+            <section>
+                <img  width="650" data-src="img/divisableProblem.png" alt="Divisable Problem">
+            </section>
+            <section>
+                <div style="float: left; width: 65%" class="fragment fade-right">
+                    <img  width="700" data-src="img/divisableProblem.png" alt="Divisable Problem">
+                </div>
+                <div style="float: left;width: 35%;">
+                    <ol>
+                        <li class="fragment fade-left">Jodu</li>
+                        <li class="fragment fade-in">Modhu</li>
+                        <li class="fragment fade-in">Kodu</li>
+                        <li class="fragment fade-in">Jodu</li>
+                        <li class="fragment fade-in">Modhu</li>
+                        <li class="fragment fade-in">Kodu</li>
+                        <li class="fragment fade-in">Jodu</li>
+                        <li class="fragment fade-in">Modhu</li>
+                        <li class="fragment fade-in">Kodu</li>
+                    </ol>
+                </div>
+            </section>
+            <section>
+                <ul>
+                    <li>Jodu = 1, 4, 7, 10, 13</li>
+                    <li class="fragment fade-in">Modhu = 2, 5, 8, 11, 14</li>
+                    <li class="fragment fade-in">Kodu = 3, 6, 9, 12, 15</li>
+                </ul>
+            </section>
+
+            <section style="text-align: left;">
+                <b>
+                    <span>-- Print "Kodu" when the number divisible by 3 remainder will be 0</span><br><br>
+                    <span class="fragment fade-in">-- Print "Jodu" when the number divisible by 3 remainder will be 1</span><br><br>
+                    <span class="fragment fade-in">-- Print "Modhu" when the number divisible by 3 remainder will be 2</span><br><br>
+                </b>
+            </section>
+            <section>
+                <pre style="font-size: 25px;"><code class="php" data-trim contenteditable>
+if ( $number % 3 == 1 ) {
+    echo "Jodu";
+} elseif ( $number % 3 == 2 ) {
+    echo "Modhu";
+} elseif ( $number % 3 == 0 ) {
+    echo "Kodu";
+}
+                </code></pre>
+            </section>
+        </section>
+
+        <section style="text-align: left;" data-transition="slide" data-background-transition="zoom">
+            <h1>Online Judge</h1>
+            <p>
+                - <a href="http://hackerrank.com">Hacker Rank</a> <br>
+                - <a href="http://spoj.com">Spoj</a>
+            </p>
+        </section>
+
+		<section>
+			<h1>ধন্যবাদ সবাইকে</h1>
+		</section>
+
+	</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/notes/notes.js', async: true }
+		]
+	});
+    Reveal.configure({ pdfMaxPagesPerSlide: 1, backgroundTransition: 'zoom' });
+
+</script>
+
+</body>
+</html>
